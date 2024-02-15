@@ -1,5 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
+//DummyURL = sqlserver://localhost:1433;database=rv;integratedSecurity=true;trustServerCertificate=true;
 
 generator client {
   provider = "prisma-client-js"
