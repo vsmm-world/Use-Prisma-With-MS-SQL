@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateCrudDto } from './dto/create-crud.dto';
 import { UpdateCrudDto } from './dto/update-crud.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { Sql, raw } from '@prisma/client/runtime/library';
+import { exec } from 'child_process';
 
 @Injectable()
 export class CrudService {
@@ -14,8 +16,11 @@ export class CrudService {
     });
   }
 
-  findAll() {
-    return `This action returns all crud`;
+  async findAll() {
+    
+ return this.prisma.$queryRaw`EXEC GetAllUsers`;
+ 
+    
   }
 
   findOne(id: string) {
